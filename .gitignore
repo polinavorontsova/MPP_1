@@ -1,0 +1,5 @@
+﻿/.idea/
+/*.sln*
+/*/*.csproj
+/*/bin/
+/*/obj/
