@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 
 namespace Tracer.Entities
 {
+    [XmlType("thread")]
     public class Trace
     {
         public Trace()
@@ -16,16 +17,23 @@ namespace Tracer.Entities
             Id = id;
         }
 
+        [JsonPropertyName("id")]
+        [XmlAttribute("id")]
         public int Id { get; set; }
 
+        [JsonPropertyName("time")]
+        [XmlAttribute("time")]
         public long Time { get; set; }
+
+        [JsonPropertyName("methods")]
+        [XmlElement("method")]
         public List<Method> Methods { get; } = new();
-        public Stack<Method> MethodsStack { get; } = new();
+
+        [JsonIgnore] [XmlIgnore] public Stack<Method> MethodsStack { get; } = new();
 
         public void AddMethod(Method method, IList<Method> rootMethods = null)
         {
             throw new NotImplementedException();
-
         }
 
         private void PushMethod(Method method, IList<Method> rootMethods)

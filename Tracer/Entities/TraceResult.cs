@@ -9,7 +9,7 @@ namespace Tracer.Entities
     {
         private readonly ConcurrentDictionary<int, Trace> _tracesDictionary = new();
 
-        public IEnumerable<Trace> Traces => _tracesDictionary.Values.ToImmutableList();
+        [JsonPropertyName("threads")] public IEnumerable<Trace> Traces => _tracesDictionary.Values.ToImmutableList();
 
         public Trace GetTrace(int id)
         {

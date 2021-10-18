@@ -21,15 +21,23 @@ namespace Tracer.Entities
             StackTracePrefix = stackTracePrefix;
         }
 
+        [JsonPropertyName("name")]
+        [XmlAttribute("name")]
         public string Name { get; set; }
 
+        [JsonPropertyName("class")]
+        [XmlAttribute("class")]
         public string Class { get; set; }
 
+        [JsonPropertyName("time")]
+        [XmlAttribute("time")]
         public long Time { get; set; }
 
+        [JsonPropertyName("methods")]
+        [XmlElement("method")]
         public List<Method> Methods { get; } = new();
 
-        public string StackTracePrefix { get; }
+        [JsonIgnore] [XmlIgnore] public string StackTracePrefix { get; }
 
         public void StopTimer()
         {
