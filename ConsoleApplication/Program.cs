@@ -14,6 +14,10 @@ namespace ConsoleApplication
             new Program().Inner();
             new Program().MoreInsideInner();
 
+            var thread = new Thread(OtherThread);
+            thread.Start();
+            thread.Join();
+
             var traceResult = Tracer.GetTraceResult();
 
             ISerializer<TraceResult> jsonSerializer = new TraceResultJsonSerializer();
@@ -36,6 +40,7 @@ namespace ConsoleApplication
             Tracer.StartTrace();
             Thread.Sleep(500);
             InsideInner();
+            new Foo(Tracer).Method();
             InsideInner();
             Tracer.StopTrace();
         }
@@ -49,6 +54,13 @@ namespace ConsoleApplication
         }
 
         private void MoreInsideInner()
+        {
+            Tracer.StartTrace();
+            Thread.Sleep(500);
+            Tracer.StopTrace();
+        }
+
+        private static void OtherThread()
         {
             Tracer.StartTrace();
             Thread.Sleep(500);
