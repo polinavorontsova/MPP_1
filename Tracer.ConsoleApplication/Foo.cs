@@ -1,7 +1,7 @@
 ﻿using System.Threading;
-using Tracer.Services;
+using Tracer.Core.Services;
 
-namespace ConsoleApplication
+namespace Tracer.ConsoleApplication
 {
     public class Foo
     {

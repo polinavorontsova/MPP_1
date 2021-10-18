@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
-namespace Tracer.Entities
+namespace Tracer.Core.Entities
 {
     [XmlType("thread")]
     public class Trace

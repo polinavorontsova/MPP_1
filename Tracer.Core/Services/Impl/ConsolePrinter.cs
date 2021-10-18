@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tracer.Services.Impl
+namespace Tracer.Core.Services.Impl
 {
     public class ConsolePrinter : IPrinter
     {

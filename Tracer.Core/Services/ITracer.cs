@@ -1,6 +1,6 @@
-﻿using Tracer.Entities;
+﻿using Tracer.Core.Entities;
 
-namespace Tracer.Services
+namespace Tracer.Core.Services
 {
     public interface ITracer
     {

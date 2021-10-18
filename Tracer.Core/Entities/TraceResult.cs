@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.Json.Serialization;
 
-namespace Tracer.Entities
+namespace Tracer.Core.Entities
 {
     public class TraceResult
     {

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace Tracer.Services.Impl
+namespace Tracer.Core.Services.Impl
 {
     public class FilePrinter : IPrinter
     {

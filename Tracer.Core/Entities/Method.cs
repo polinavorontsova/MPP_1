@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
-namespace Tracer.Entities
+namespace Tracer.Core.Entities
 {
     public class Method
     {

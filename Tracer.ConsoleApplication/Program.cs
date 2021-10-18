@@ -1,9 +1,9 @@
 ﻿using System.Threading;
-using Tracer.Entities;
-using Tracer.Services;
-using Tracer.Services.Impl;
+using Tracer.Core.Entities;
+using Tracer.Core.Services;
+using Tracer.Core.Services.Impl;
 
-namespace ConsoleApplication
+namespace Tracer.ConsoleApplication
 {
     internal class Program
     {

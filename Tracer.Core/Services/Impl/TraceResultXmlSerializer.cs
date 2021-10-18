@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Xml;
 using System.Xml.Serialization;
-using Tracer.Entities;
+using Tracer.Core.Entities;
 
-namespace Tracer.Services.Impl
+namespace Tracer.Core.Services.Impl
 {
     public class TraceResultXmlSerializer : ISerializer<TraceResult>
     {

@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using Tracer.Entities;
-using Trace = Tracer.Entities.Trace;
+using Tracer.Core.Entities;
+using Trace = Tracer.Core.Entities.Trace;
 
-namespace Tracer.Services.Impl
+namespace Tracer.Core.Services.Impl
 {
     public class MethodTracer : ITracer
     {

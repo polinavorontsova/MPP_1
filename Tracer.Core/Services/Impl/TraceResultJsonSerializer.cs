@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using Tracer.Entities;
+using Tracer.Core.Entities;
 
-namespace Tracer.Services.Impl
+namespace Tracer.Core.Services.Impl
 {
     public class TraceResultJsonSerializer : ISerializer<TraceResult>
     {
