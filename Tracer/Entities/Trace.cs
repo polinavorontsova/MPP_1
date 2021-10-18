@@ -33,17 +33,46 @@ namespace Tracer.Entities
 
         public void AddMethod(Method method, IList<Method> rootMethods = null)
         {
-            throw new NotImplementedException();
+            rootMethods ??= Methods;
+
+            foreach (var currentMethod in rootMethods)
+            {
+                var methodStackTracePrefix = method.StackTracePrefix;
+                var currentMethodStackTracePrefix = currentMethod.StackTracePrefix;
+
+                if (methodStackTracePrefix.Equals(currentMethodStackTracePrefix))
+                {
+                    PushMethod(method, rootMethods);
+                    return;
+                }
+
+                if (methodStackTracePrefix.EndsWith(currentMethodStackTracePrefix))
+                {
+                    AddMethod(method, currentMethod.Methods);
+                    return;
+                }
+            }
+
+            PushMethod(method, rootMethods);
         }
 
         private void PushMethod(Method method, IList<Method> rootMethods)
         {
-            throw new NotImplementedException();
+            rootMethods.Insert(0, method);
+            MethodsStack.Push(method);
+            method.StartTimer();
         }
 
         public void DeleteMethod(Method method)
         {
-            throw new NotImplementedException();
+            if (MethodsStack.Count == 0) throw new Exception($"Redundant stopTrace() call for {method}.");
+
+            var lastMethod = MethodsStack.Pop();
+
+            if (!lastMethod.Equals(method))
+                throw new Exception($"Invalid method pair: expected - {lastMethod}, got - {method}.");
+
+            lastMethod.StopTimer();
         }
     }
 }
